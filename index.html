@@ -19,15 +19,23 @@
     
     <div class="container p-3 pt-5">
      
-        <div class="row d-flex justify-content-around">
+        <div class="row d-flex align-items-center">
 
-            <span class="col text-left pl-3">Prev</span>
-            <span class="col text-center pl-3 pr-3">August, 2020</span>
-            <span class="col text-right pr-3">Next</span>
+            <a class="col text-right btn prev text-secondary">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>
+            </a>
+            <span class="col text-center align-text-bottom">August, 2020</span>
+            <a class="col text-left btn next text-secondary">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                  </svg>
+            </a>
 
         </div>
 
-        <table class="table table-bordered mt-5 pt-3 table-hover">
+        <table class="table table-bordered mt-5 pt-3">
             <thead>
               <tr>
                 <th scope="col">Monday</th>
@@ -41,72 +49,110 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col">1</th>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col">1</td>
               </tr>
               <tr>
-                <th scope="col">2</th>
-                <th scope="col">3</th>
-                <th scope="col">4</th>
-                <th scope="col">5</th>
-                <th scope="col">6</th>
-                <th scope="col">7</th>
-                <th scope="col">8</th>
+                <td scope="col">2</td>
+                <td scope="col">3</td>
+                <td scope="col">4</td>
+                <td scope="col">5</td>
+                <td scope="col">6</td>
+                <td scope="col">7</td>
+                <td scope="col p-0">8</td>
               </tr>
               <tr>
-                <th scope="col">9</th>
-                <th scope="col">10</th>
-                <th scope="col">11</th>
-                <th scope="col">12</th>
-                <th scope="col">13</th>
-                <th scope="col">14</th>
-                <th scope="col">15</th>
+                <td scope="col">9</td>
+                <td scope="col">10</td>
+                <td scope="col">11</td>
+                <td scope="col">12</td>
+                <td scope="col">13</td>
+                <td scope="col">14</td>
+                <td scope="col">15</td>
               </tr>
               <tr>
-                <th scope="col">16</th>
-                <th scope="col">17</th>
-                <th scope="col">18</th>
-                <th scope="col">19</th>
-                <th scope="col">20</th>
-                <th scope="col">21</th>
-                <th scope="col">22</th>
+                <td scope="col">16</td>
+                <td scope="col">17</td>
+                <td scope="col">18</td>
+                <td scope="col">19</td>
+                <td scope="col">20</td>
+                <td scope="col">21</td>
+                <td scope="col">22</td>
               </tr>
               <tr>
-                <th scope="col">23</th>
-                <th scope="col">24</th>
-                <th scope="col">25</th>
-                <th scope="col">26</th>
-                <th scope="col">27</th>
-                <th scope="col">28</th>
-                <th scope="col">29</th>
+                <td scope="col">23</td>
+                <td scope="col">24</td>
+                <td scope="col">25</td>
+                <td scope="col">26</td>
+                <td scope="col">27</td>
+                <td scope="col">28</td>
+                <td scope="col">29</td>
               </tr>
               <tr>
-                <th scope="col">30</th>
-                <th scope="col">31</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
+                <td scope="col">30</td>
+                <td scope="col">31</td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
               </tr>
             </tbody>
           </table>
 
-        <div class="row mt-4">
+        <div class="row mt-4 d-flex align-items-center">
             <span class="col text-left">Today (31 August 2020)</span>
-            <span class="col text-right pr-4">Add Event</span>
+            <a class="col text-right pr-5 btn event-add text-primary">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+            </a>
         </div>
 
-        <div class="row mt-4">
-            <div class="col-12 p-2">Event A -- 9:30 AM  -  12:30 PM  Edit/Delete</div>
-            <div class="col-12 p-2">Event B -- 12:30 PM -  1:30 PM  Edit/Delete</div>
-            <div class="col-12 p-2">Event C -- 2:30 PM  -  4:30 PM  Edit/Delete</div>
-            <div class="col-12 p-2">Event D -- 6:30 AM  -  8:30 PM  Edit/Delete</div>
+        <div class="row d-flex align-items-center">
+            <div class="col-12 p-2">
+                <div class="row pl-4 border">
+                    <span class="col-6">Event A - 9:30 AM - 12:30 PM </span>
+                    <a class="col-1 btn event-edit text-warning">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                          </svg>
+                    </a>
+                    <a class="col-1 btn event-delete text-danger">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                          </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 p-2">
+                <div class="row">
+                    <div class="col-8"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="col-12 p-2">
+                <div class="row">
+                    <div class="col-8"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="col-12 p-2">
+                <div class="row">
+                    <div class="col-8"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
         </div>
 
     </div>

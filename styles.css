@@ -1,0 +1,14 @@
+.prev, .next{
+
+     font-size : 1.6em;
+} 
+
+.event-edit, .event-delete{
+
+    font-size: 1.4em;
+}
+
+.event-add{
+
+    font-size: 2.2em;
+}
