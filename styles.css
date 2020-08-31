@@ -1,14 +1,19 @@
 .prev, .next{
 
-     font-size : 1.6em;
+     font-size : 1.1em;
 } 
 
 .event-edit, .event-delete{
 
-    font-size: 1.4em;
+    font-size: 1.1em;
 }
 
 .event-add{
 
-    font-size: 2.2em;
+    font-size: 1.2em;
+}
+
+.month-top {
+
+    font-size: 1em;
 }
