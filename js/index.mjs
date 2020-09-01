@@ -1,19 +1,25 @@
 import domElements from './domElements.mjs'
+import { getCurrentMonthAndYear, getPreviousMonth, getNextMonth } from './utils/getMonth.mjs'
 
 
 document.addEventListener("DOMContentLoaded", ()=> {
 
-    console.log("Content is loaded!");
+    const monthAndYear = getCurrentMonthAndYear();
 
 });
 
 domElements.prevArrow.addEventListener("click", ()=> {
 
-    console.log("Previous button is clicked.")
+    const monthAndYear = getPreviousMonth();
+
+    console.log(monthAndYear);
 });
 
 
 domElements.nextArrow.addEventListener("click", ()=> {
 
-    console.log("Next Button is clicked.")
+    const monthAndYear = getNextMonth();
+
+    console.log(monthAndYear);
+    
 });
