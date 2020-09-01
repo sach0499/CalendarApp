@@ -6,13 +6,17 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     const monthAndYear = getCurrentMonthAndYear();
 
+    domElements.monthTitle.textContent = `${monthAndYear[0]}, ${monthAndYear[1]}`
+
+    
+
 });
 
 domElements.prevArrow.addEventListener("click", ()=> {
 
     const monthAndYear = getPreviousMonth();
 
-    console.log(monthAndYear);
+    domElements.monthTitle.textContent = `${monthAndYear[0]}, ${monthAndYear[1]}`
 });
 
 
@@ -20,6 +24,6 @@ domElements.nextArrow.addEventListener("click", ()=> {
 
     const monthAndYear = getNextMonth();
 
-    console.log(monthAndYear);
+    domElements.monthTitle.textContent = `${monthAndYear[0]}, ${monthAndYear[1]}`
     
 });

@@ -29,7 +29,7 @@ export const getPreviousMonth = () => {
     if(index === 0){
 
         currentMonth[0] = months[11];
-        currentMonth[1] = currentMonth[1] -1;
+        currentMonth[1] = parseInt(currentMonth[1]) - 1;
     }
 
     else
@@ -60,7 +60,7 @@ export const getNextMonth = () => {
     if(index === 11){
 
         currentMonth[0] = months[0];
-        currentMonth[1] = currentMonth[1] + 1;
+        currentMonth[1] = parseInt(currentMonth[1]) + 1;
     }
 
     else
