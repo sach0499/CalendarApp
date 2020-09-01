@@ -1,4 +1,4 @@
-export const domElements = {
+export default  {
 
      prevArrow: document.querySelector('.prev'),
      nextArrow: document.querySelector('.next'),
