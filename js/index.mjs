@@ -1,5 +1,5 @@
 import domElements from './domElements.mjs'
-import { getCurrentMonthAndYear, getPreviousMonth, getNextMonth } from './utils/getMonth.mjs'
+import { getCurrentMonthAndYear, getPreviousMonth, getNextMonth, calculateOffset, daysInMonth} from './utils/getMonth.mjs'
 import {renderCalendar} from './utils/renderCalendar.mjs'
 
 
@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     domElements.monthTitle.textContent = `${monthAndYear[0]}, ${monthAndYear[1]}`
 
-    renderCalendar(monthAndYear);
-
+    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear))
 
 });
 
@@ -20,16 +19,18 @@ domElements.prevArrow.addEventListener("click", ()=> {
 
     domElements.monthTitle.textContent = `${monthAndYear[0]}, ${monthAndYear[1]}`
 
-    renderCalendar(monthAndYear);
+    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear))
+  
+
 });
 
 
-domElements.nextArrow.addEventListener("click", ()=> {
+domElements.nextArrow.addEventListener("click", () => {
 
     const monthAndYear = getNextMonth();
 
     domElements.monthTitle.textContent = `${monthAndYear[0]}, ${monthAndYear[1]}`
 
-    renderCalendar(monthAndYear);
-    
+    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear))
+
 });

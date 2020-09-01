@@ -1,28 +1,74 @@
 import domElements from "./../domElements.mjs";
 
-const getFirstDay = (monthAndYear) => {
-  const year = monthAndYear[1];
-  const month = monthAndYear[2];
 
-  const firstDay = new Date(year, month, 1).toDateString().split(" ")[0];
+const calculateNum = (input) => {
 
-  return firstDay;
-};
+    
+  if(input.offset !== 0){
 
-const daysInMonth = (monthAndYear) => {
-    const year = monthAndYear[1];
-    const month = monthAndYear[2] + 1;
-    return new Date(year, month, 0).getDate();
+      input.offset--;
+      return "";
+  }
+       
+  else if(input.remainingDays !== 0){
+
+    input.remainingDays--;
+    return (input.numDays - input.remainingDays);
+  }
+        
+  else
+      return "";
+
+       
 }
 
-export const renderCalendar = (monthAndYear) => {
 
 
-    const firstDay = getFirstDay(monthAndYear);
-
-    const numDays = daysInMonth(monthAndYear);
+export const renderCalendar = (offset, numDays) => {
 
 
-    console.log(firstDay, numDays);
+  let html = "";
+
+  let rows = Math.ceil((offset + numDays) / 7);
+
+
+  const input = {
+
+      offset: offset,
+      remainingDays: numDays,
+      numDays: numDays
+  }
+  
+
+
+  for(let i = 0; i < rows; i++){
+
+     html += "<tr>";
+
+     for(let j =0; j < 7; j++)
+        html += `<td scope="col">${calculateNum(input)}</td>`;
+
+    html += "</tr>";
+       
+  }
+
+  console.log(input)
+
+ // console.log(html);
+
+   domElements.table.innerHTML = html;
+
+  
 
 };
+
+
+/* <tr>
+<td scope="col"></td>
+<td scope="col"></td>
+<td scope="col"></td>
+<td scope="col"></td>
+<td scope="col"></td>
+<td scope="col"></td>
+<td scope="col">1</td>
+</tr> */
