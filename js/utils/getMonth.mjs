@@ -6,7 +6,7 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 export const getCurrentMonthAndYear = () => {
 
     const date = new Date();
-    const result = [months[date.getMonth()], date.getFullYear()];
+    const result = [months[date.getMonth()], date.getFullYear(), date.getMonth()];
      return result;
 }
 
@@ -34,6 +34,8 @@ export const getPreviousMonth = () => {
 
     else
         currentMonth[0] = months[index - 1];
+
+    currentMonth[2] = index;
 
      
      return currentMonth;
@@ -65,6 +67,8 @@ export const getNextMonth = () => {
 
     else
         currentMonth[0] = months[index + 1];
+
+    currentMonth[2] = index;
 
      
      return currentMonth;
