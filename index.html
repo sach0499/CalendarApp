@@ -8,14 +8,78 @@
     <!-- Bootstrap CDN -->     
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+
+
+
+<!-- Event Add Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add a new Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="title" placeholder="Event Title">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="startTime" class="col-sm-2 col-form-label">Begins At</label>
+            <div class="col-sm-4">
+              <input type="time" class="form-control" id="startTime">
+            </div>
+
+            <label for="endTime" class="col-sm-2 col-form-label">Ends At</label>
+            <div class="col-sm-4">
+              <input type="time" class="form-control" id="endTime">
+          </div>
+          </div>
+          <div class="form-group row">
+            <label for="people" class="col-sm-2 col-form-label">People</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="people">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="description" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="description">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="location" class="col-sm-2 col-form-label">Location</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="location">
+            </div>
+          </div>
+         
+          <div class="form-group row ">
+            <div class="col-sm-12 align-text-middle d-flex justify-content-center" >
+              <button type="submit" class="btn btn-primary">Add Event</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
     
     <div class="container p-3 pt-5">
      
@@ -107,7 +171,7 @@
 
         <div class="row mt-4 d-flex align-items-center border">
             <span class="col text-left" href="#">Today (31 August 2020)</span>
-            <a class="col text-right pr-5 btn event-add text-primary">
+            <a class="col text-right pr-5 btn event-add text-primary" data-toggle="modal" data-target="#exampleModalCenter">
                 <svg width="2.2em" height="2.2em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                   </svg>
@@ -177,6 +241,7 @@
 </body>
     <script src="/js/index.mjs" type="module"></script>
 </html>
+
 
 
 

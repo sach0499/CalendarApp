@@ -6,9 +6,9 @@ export default  {
 
      table: document.querySelector(".table tbody"),
 
-     addNoteBtn: document.querySelector('.event-add'),
-     editNoteBtn: document.querySelector('.event-edit'),
-     deleteNoteBtn: document.querySelector('.event-delete'),
+     addEventBtn: document.querySelector('.event-add'),
+     editEventBtn: document.querySelector('.event-edit'),
+     deleteEventBtn: document.querySelector('.event-delete'),
 
 
 }

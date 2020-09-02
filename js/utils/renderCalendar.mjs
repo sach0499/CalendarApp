@@ -52,13 +52,9 @@ export const renderCalendar = (offset, numDays) => {
        
   }
 
-  console.log(input)
-
- // console.log(html);
-
+  
    domElements.table.innerHTML = html;
 
-  
 
 };
 

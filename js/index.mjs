@@ -34,3 +34,11 @@ domElements.nextArrow.addEventListener("click", () => {
     renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear))
 
 });
+
+
+
+domElements.addEventBtn.addEventListener("click", () => {
+
+
+})
+
