@@ -42,3 +42,22 @@ domElements.addEventBtn.addEventListener("click", () => {
 
 })
 
+
+domElements.modalAddEvent.addEventListener("click", (e) => {
+
+
+    e.preventDefault();
+
+    const inputs = domElements.modalForm.elements;
+
+    const length = domElements.modalForm.length;
+
+    for(let i =0; i < length - 1; i++){
+
+        console.log(`${inputs[i].id}: ${inputs[i].value}`);
+    } 
+    
+    
+
+
+})
