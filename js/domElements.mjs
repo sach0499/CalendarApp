@@ -14,7 +14,8 @@ export default  {
      editEventBtn: document.querySelector('.event-edit'),
      deleteEventBtn: document.querySelector('.event-delete'),
 
-     dateTitleBtm: document.querySelector('.dateTitleBtm')
+     dateTitleBtm: document.querySelector('.dateTitleBtm'),
+     eventsTab: document.querySelector('.events')
 
 }
 
