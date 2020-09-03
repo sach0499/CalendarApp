@@ -34,9 +34,9 @@ export const getCurrentMonthAndYear = () => {
 export const getPreviousMonth = () => {
   let currentMonth = domElements.monthTitle.textContent;
 
-  currentMonth = currentMonth.split(",");
+  currentMonth = currentMonth.split(" ");
 
-  currentMonth[1] = currentMonth[1].trim();
+  currentMonth[1] = currentMonth[1];
 
   let index;
 
@@ -62,9 +62,9 @@ export const getPreviousMonth = () => {
 export const getNextMonth = () => {
   let currentMonth = domElements.monthTitle.textContent;
 
-  currentMonth = currentMonth.split(",");
+  currentMonth = currentMonth.split(" ");
 
-  currentMonth[1] = currentMonth[1].trim();
+  currentMonth[1] = currentMonth[1];
 
   let index;
 

@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear))
 
+    domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
+
 });
 
 domElements.prevArrow.addEventListener("click", ()=> {
@@ -21,6 +23,7 @@ domElements.prevArrow.addEventListener("click", ()=> {
 
     renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear))
   
+   // domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
 
 });
 
@@ -32,6 +35,8 @@ domElements.nextArrow.addEventListener("click", () => {
     domElements.monthTitle.textContent = `${monthAndYear[0]} ${monthAndYear[1]}`
 
     renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear))
+
+   // domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
 
 });
 
@@ -55,7 +60,9 @@ domElements.modalAddEvent.addEventListener("click", (e) => {
     for(let i =0; i < length - 1; i++){
 
         console.log(`${inputs[i].id}: ${inputs[i].value}`);
-    } 
+    }
+
+    
     
     
 
