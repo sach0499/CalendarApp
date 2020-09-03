@@ -57,11 +57,27 @@ domElements.modalAddEvent.addEventListener("click", (e) => {
 
     const length = domElements.modalForm.length;
 
-    for(let i =0; i < length - 1; i++){
+    let event = {};
 
-        console.log(`${inputs[i].id}: ${inputs[i].value}`);
+    for(let i =0; i < length - 1; i++)
+        event[`${inputs[i].id}`] = `${inputs[i].value}`;
+
+
+    const key = domElements.dateTitleBtm.textContent.split(" ").join("-");
+
+    let events = localStorage.getItem(key);
+
+    if(events == null){
+        events = [event];
+
+        localStorage.setItem(key, JSON.stringify(events));
     }
+    else {
 
+        events = (JSON.parse(events));
+        events.push(event);
+        localStorage.setItem(key, JSON.stringify(events));
+    }
     
     
     
