@@ -24,12 +24,15 @@ const calculateNum = (input) => {
 
 
 
+
 export const renderCalendar = (offset, numDays) => {
 
 
   let html = "";
 
   let rows = Math.ceil((offset + numDays) / 7);
+
+  let today = (new Date).getDate();
 
 
   const input = {
@@ -45,8 +48,17 @@ export const renderCalendar = (offset, numDays) => {
 
      html += "<tr>";
 
-     for(let j =0; j < 7; j++)
-        html += `<td scope="col">${calculateNum(input)}</td>`;
+     for(let j =0; j < 7; j++){
+
+        let todayCell = "";
+        let fill = calculateNum(input);
+
+        if(fill == today)
+          todayCell = "today"
+
+        html += `<td scope="col" class="${todayCell}">${fill}</td>`;
+     }
+        
 
     html += "</tr>";
        

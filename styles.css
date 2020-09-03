@@ -17,3 +17,17 @@
 
     font-size: 1em;
 }
+
+.today {
+
+
+    background: rgb(250, 225, 229);
+}
+
+
+.active {
+
+
+     background: powderblue;
+
+}

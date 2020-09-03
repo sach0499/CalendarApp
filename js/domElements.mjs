@@ -6,6 +6,7 @@ export default  {
 
      table: document.querySelector(".table tbody"),
 
+
      addEventBtn: document.querySelector('.event-add'),
      modalAddEvent: document.querySelector('.modalAddEvent'),
      modalForm: document.querySelector('.modal_form'),
@@ -13,6 +14,7 @@ export default  {
      editEventBtn: document.querySelector('.event-edit'),
      deleteEventBtn: document.querySelector('.event-delete'),
 
+     dateTitleBtm: document.querySelector('.dateTitleBtm')
 
 }
 
