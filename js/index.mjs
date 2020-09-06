@@ -103,3 +103,18 @@ domElements.table.addEventListener("click", (e)=> {
       renderEvents(domElements.dateTitleBtm.textContent)
 
 })
+
+
+domElements.eventsTab.addEventListener("click", (e) => {
+
+        
+        if(e.target && e.target.id == "event-edit"){
+
+           
+        }
+
+        else if(e.target && e.target.id == "event-delete"){
+
+            
+        }
+})

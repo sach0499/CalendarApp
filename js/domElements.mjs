@@ -11,8 +11,8 @@ export default  {
      modalAddEvent: document.querySelector('.modalAddEvent'),
      modalForm: document.querySelector('.modal_form'),
 
-     editEventBtn: document.querySelector('.event-edit'),
-     deleteEventBtn: document.querySelector('.event-delete'),
+     editEventBtn: document.querySelector('#event-edit'),
+     deleteEventBtn: document.querySelector('#event-delete'),
 
      dateTitleBtm: document.querySelector('.dateTitleBtm'),
      eventsTab: document.querySelector('.events')
