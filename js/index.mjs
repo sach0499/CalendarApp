@@ -65,9 +65,12 @@ domElements.modalAddEvent.addEventListener("click", (e) => {
 
     let event = {};
 
+    
+
     for(let i =0; i < length - 1; i++)
         event[`${inputs[i].id}`] = `${inputs[i].value}`;
 
+    event["id"] = `${event["title"].split(' ').join('-')}${event["startTime"]}${event["endTime"]}`;
 
     const key = domElements.dateTitleBtm.textContent.split(" ").join("-");
 
@@ -107,13 +110,43 @@ domElements.table.addEventListener("click", (e)=> {
 
 domElements.eventsTab.addEventListener("click", (e) => {
 
-        
-        if(e.target && e.target.id == "event-edit"){
+        const btn = e.target;
+      
+        if(btn !== null && btn.id == "event-edit"){
+
 
            
         }
 
-        else if(e.target && e.target.id == "event-delete"){
+        else if(btn !== null && btn.id == "event-delete"){
+
+
+            // 1. get the date and eventID
+
+            const date = domElements.dateTitleBtm.textContent;
+            const eventId = btn.classList[btn.classList.length - 1];
+
+            // 2. get the event from localstorage and delete it
+
+            const events = JSON.parse(localStorage.getItem(date.split(' ').join('-')));
+
+           
+            for(let i = 0; i < events.length; i++){
+
+                if(events[i].id === eventId){
+
+                    events.splice(i, 1);
+                    break;
+                }
+            }
+
+           // console.log(events)
+
+            localStorage[date.split(' ').join('-')] = JSON.stringify(events);
+
+            // 3. render events again
+
+            renderEvents(date)
 
             
         }
