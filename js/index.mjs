@@ -114,8 +114,41 @@ domElements.eventsTab.addEventListener("click", (e) => {
       
         if(btn !== null && btn.id == "event-edit"){
 
+            // 1. get date and event id
 
+            const date = domElements.dateTitleBtm.textContent;
+            const eventId = btn.classList[btn.classList.length - 1];
+
+            // 2. get the event from the local storage
+
+
+            const events = JSON.parse(localStorage.getItem(date.split(' ').join('-')));
+            let event;
            
+            for(let i = 0; i < events.length; i++)
+               if(events[i].id === eventId){
+                    event = events[i]
+                    break;
+                }  
+            
+            // 3. open modal with filled details
+
+
+            const modal = $('#exampleModalCenter');
+
+            modal.modal('show');
+
+            
+
+            const inputs = modal["0"].querySelectorAll("input");
+
+            const keys = Object.keys(event);
+        
+            for(let i = 0; i < inputs.length; i++)
+                 inputs[i].value = event[keys[i]];
+
+            // 3. if edit event is clicked then edit event
+        
         }
 
         else if(btn !== null && btn.id == "event-delete"){
@@ -140,7 +173,6 @@ domElements.eventsTab.addEventListener("click", (e) => {
                 }
             }
 
-           // console.log(events)
 
             localStorage[date.split(' ').join('-')] = JSON.stringify(events);
 
