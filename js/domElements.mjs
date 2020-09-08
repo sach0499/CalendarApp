@@ -9,6 +9,7 @@ export default  {
 
      addEventBtn: document.querySelector('.event-add'),
      modalAddEvent: document.querySelector('.modalAddEvent'),
+     modalEditEvent: document.querySelector('.modalEditEvent'),
      modalForm: document.querySelector('.modal_form'),
 
      editEventBtn: document.querySelector('#event-edit'),

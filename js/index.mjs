@@ -15,8 +15,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
 
-    renderEvents(domElements.dateTitleBtm.textContent)
-
+    renderEvents(domElements.dateTitleBtm.textContent);
 
 
 });
@@ -47,11 +46,21 @@ domElements.nextArrow.addEventListener("click", () => {
 });
 
 
+domElements.addEventBtn.addEventListener("click", () =>{
 
-domElements.addEventBtn.addEventListener("click", () => {
+
+    const inputs = domElements.modalForm.elements;
+
+    for(let i =0; i < inputs.length; i++)
+            inputs[i].value = "";
+
+    const modal = $('#exampleModalCenter');
+    modal.modal('show');
 
 
-})
+} )
+
+
 
 
 domElements.modalAddEvent.addEventListener("click", (e) => {
@@ -60,6 +69,9 @@ domElements.modalAddEvent.addEventListener("click", (e) => {
     e.preventDefault();
 
     const inputs = domElements.modalForm.elements;
+
+    for(let i =0; i < events.length; i++)
+            inputs[i].value = "";
 
     const length = domElements.modalForm.length;
 
@@ -147,7 +159,12 @@ domElements.eventsTab.addEventListener("click", (e) => {
             for(let i = 0; i < inputs.length; i++)
                  inputs[i].value = event[keys[i]];
 
-            // 3. if edit event is clicked then edit event
+            // 3. enable edit button with the id and hide the add event button
+
+            domElements.modalAddEvent.classList.add("d-none");
+            domElements.modalEditEvent.classList.remove("d-none");
+
+            domElements.modalEditEvent.id = event.id;
         
         }
 
@@ -182,4 +199,63 @@ domElements.eventsTab.addEventListener("click", (e) => {
 
             
         }
+})
+
+
+
+domElements.modalEditEvent.addEventListener("click", (e)=> {
+
+
+     // 0. 
+     e.preventDefault();
+
+     // 1. get event id and date
+     const date = domElements.dateTitleBtm.textContent.split(" ").join("-");
+     const eventId = domElements.modalEditEvent.id;
+
+     // 2. get local storage data
+
+     const events = (JSON.parse(localStorage.getItem(date)))
+
+     // 3. modify the object
+
+
+     for(let i = 0; i < events.length; i++){
+
+          if(events[i].id === eventId){
+
+              const inputs = document.querySelectorAll("input");
+              const keys = Object.keys(events[i]);
+
+              for(let j =0; j < inputs.length; j++)
+                events[i][keys[j]] = inputs[j].value;
+
+              break;
+
+          }
+     }
+
+
+     // 4. save it
+     localStorage.setItem(date, JSON.stringify(events));
+
+
+     // 5. doing some rough work
+     // a) closing the modal
+     // b) rendering events again
+
+    const modal = $('#exampleModalCenter');
+    modal.modal('hide');
+
+    renderEvents(date.split("-").join(' '));
+
+    for(let i =0; i < events.length; i++)
+            inputs[i].value = "";
+    
+    domElements.modalAddEvent.classList.remove("d-none");
+    domElements.modalEditEvent.classList.add('d-none');
+
+    domElements.modalEditEvent.removeAttribute('id');
+
+
 })
