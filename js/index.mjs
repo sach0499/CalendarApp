@@ -58,6 +58,11 @@ domElements.addEventBtn.addEventListener("click", () =>{
     modal.modal('show');
 
 
+    domElements.modalEditEvent.classList.add("d-none");
+    domElements.modalAddEvent.classList.remove("d-none");
+    domElements.modalEditEvent.removeAttribute('id');
+
+
 } )
 
 
@@ -163,7 +168,6 @@ domElements.eventsTab.addEventListener("click", (e) => {
 
             domElements.modalAddEvent.classList.add("d-none");
             domElements.modalEditEvent.classList.remove("d-none");
-
             domElements.modalEditEvent.id = event.id;
         
         }
