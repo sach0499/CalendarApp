@@ -1,4 +1,5 @@
 import domElements from "./../domElements.mjs";
+import {calculateOffset, daysInMonth} from "./getMonth.mjs";
 
 
 const calculateNum = (input) => {
@@ -22,67 +23,62 @@ const calculateNum = (input) => {
        
 }
 
+const preprocessCalendar = (monthAndYear) =>{
 
 
+  const offset = calculateOffset(monthAndYear);
+  const numDays = daysInMonth(monthAndYear);
+  const rows = Math.ceil((offset + numDays) / 7);
+  let today = null;
 
-export const renderCalendar = (offset, numDays, monthAndYear) => {
-
-
-  let html = "";
-
-  let rows = Math.ceil((offset + numDays) / 7);
-
-  let todayFlag = false;
   if(monthAndYear[2] === (new Date).getMonth() && parseInt(monthAndYear[1]) === (new Date).getFullYear())
-      todayFlag = true;
+        today = (new Date).getDate();
 
- // console.log(monthAndYear)
+  return {
 
-  let today = (new Date).getDate();
+      offset,
+      numDays,
+      rows,
+      today
+  }
+     
+}
 
+
+
+
+export const renderCalendar = (monthAndYear) => {
+
+  const info = preprocessCalendar(monthAndYear)
 
   const input = {
 
-      offset: offset,
-      remainingDays: numDays,
-      numDays: numDays
+    offset: info.offset,
+    remainingDays: info.numDays,
+    numDays: info.numDays
+      
   }
-  
 
+  let html = "";
 
-  for(let i = 0; i < rows; i++){
+  for(let i =0; i < info.rows; i++){
 
-     html += '<tr>';
+      html += '<tr>';
 
-     for(let j =0; j < 7; j++){
+      for(let j =0; j < 7; j++){
 
-        let todayCell = "";
-        let fill = calculateNum(input);
+        const fill = calculateNum(input);
 
-        if(fill == today && todayFlag === true)
-          todayCell = "today"
+        const todayCell = (fill === info.today) ? 'today' : '';
 
         html += `<td scope="col" class="${todayCell} align-top p-0 pb-5 pr-2 pt-12 tableCells">${fill}</td>`;
-     }
-        
 
-    html += "</tr>";
-       
+      }
+
+      html += '</tr>';
+
   }
 
-  
-   domElements.table.innerHTML = html;
+  domElements.table.innerHTML = html;
 
-
-};
-
-
-/* <tr>
-<td scope="col"></td>
-<td scope="col"></td>
-<td scope="col"></td>
-<td scope="col"></td>
-<td scope="col"></td>
-<td scope="col"></td>
-<td scope="col">1</td>
-</tr> */
+} 

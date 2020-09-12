@@ -1,6 +1,6 @@
 import domElements from './domElements.mjs'
 import { getCurrentMonthAndYear, getPreviousMonth, getNextMonth, calculateOffset, daysInMonth,displayMonthTitleAtTop } from './utils/getMonth.mjs'
-import {renderCalendar} from './utils/renderCalendar.mjs'
+import { renderCalendar} from './utils/renderCalendar.mjs'
 import renderEvents from './utils/renderEvents.mjs';
 
 
@@ -15,11 +15,12 @@ monthAndYear:
 document.addEventListener("DOMContentLoaded", ()=> {
 
     const monthAndYear = getCurrentMonthAndYear();
-
+    
     displayMonthTitleAtTop(monthAndYear)
 
-    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear), monthAndYear)
+    renderCalendar(monthAndYear)
 
+  
     domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
 
     renderEvents(domElements.dateTitleBtm.textContent);
@@ -34,7 +35,7 @@ domElements.prevArrow.addEventListener("click", ()=> {
     displayMonthTitleAtTop(monthAndYear)
 
 
-    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear), monthAndYear)
+    renderCalendar(monthAndYear)
   
    // domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
 
@@ -47,8 +48,7 @@ domElements.nextArrow.addEventListener("click", () => {
 
     displayMonthTitleAtTop(monthAndYear)
 
-
-    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear), monthAndYear)
+    renderCalendar(monthAndYear)
 
    // domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
 
