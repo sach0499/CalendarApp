@@ -9,5 +9,5 @@ A Calendar Application with an Event Manager. [Live demo.](https://mycalendarapp
  * Save events to Local Storage
 ---
 ## Screenshot
-![Screenshot](/sach0499/CalendarApp/blob/master/images/screenshot.png)
+![Screenshot](/images/screenshot.png)
 
