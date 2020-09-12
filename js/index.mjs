@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     domElements.monthTitle.textContent = `${monthAndYear[0]} ${monthAndYear[1]}`
 
-    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear))
+    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear), monthAndYear)
 
     domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
 
@@ -26,7 +26,7 @@ domElements.prevArrow.addEventListener("click", ()=> {
 
     domElements.monthTitle.textContent = `${monthAndYear[0]} ${monthAndYear[1]}`
 
-    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear))
+    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear), monthAndYear)
   
    // domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
 
@@ -39,7 +39,7 @@ domElements.nextArrow.addEventListener("click", () => {
 
     domElements.monthTitle.textContent = `${monthAndYear[0]} ${monthAndYear[1]}`
 
-    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear))
+    renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear), monthAndYear)
 
    // domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
 

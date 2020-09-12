@@ -25,12 +25,20 @@ const calculateNum = (input) => {
 
 
 
-export const renderCalendar = (offset, numDays) => {
+export const renderCalendar = (offset, numDays, monthAndYear) => {
 
 
   let html = "";
 
   let rows = Math.ceil((offset + numDays) / 7);
+
+  let todayFlag = false;
+
+  if(monthAndYear[2] === (new Date).getMonth() && parseInt(monthAndYear[1]) === (new Date).getFullYear())
+      todayFlag = true;
+
+
+ // console.log(monthAndYear)
 
   let today = (new Date).getDate();
 
@@ -53,7 +61,7 @@ export const renderCalendar = (offset, numDays) => {
         let todayCell = "";
         let fill = calculateNum(input);
 
-        if(fill == today)
+        if(fill == today && todayFlag === true)
           todayCell = "today"
 
         html += `<td scope="col" class="${todayCell}">${fill}</td>`;
