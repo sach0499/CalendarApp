@@ -21,7 +21,7 @@
 .today {
 
 
-    background: rgb(250, 225, 229);
+    background: rgba(73, 175, 206, 0.445);
 }
 
 
@@ -36,4 +36,20 @@
 body{
 
     padding-bottom: 300px;
+    font-family: sans-serif;
+}
+
+
+.tableCells{
+
+   text-align: end;
+
+}
+
+
+.dayCell{
+
+    text-align: center;
+
+
 }

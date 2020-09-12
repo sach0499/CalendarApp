@@ -33,10 +33,8 @@ export const renderCalendar = (offset, numDays, monthAndYear) => {
   let rows = Math.ceil((offset + numDays) / 7);
 
   let todayFlag = false;
-
   if(monthAndYear[2] === (new Date).getMonth() && parseInt(monthAndYear[1]) === (new Date).getFullYear())
       todayFlag = true;
-
 
  // console.log(monthAndYear)
 
@@ -54,7 +52,7 @@ export const renderCalendar = (offset, numDays, monthAndYear) => {
 
   for(let i = 0; i < rows; i++){
 
-     html += "<tr>";
+     html += '<tr>';
 
      for(let j =0; j < 7; j++){
 
@@ -64,7 +62,7 @@ export const renderCalendar = (offset, numDays, monthAndYear) => {
         if(fill == today && todayFlag === true)
           todayCell = "today"
 
-        html += `<td scope="col" class="${todayCell}">${fill}</td>`;
+        html += `<td scope="col" class="${todayCell} align-top p-0 pb-5 pr-2 pt-12 tableCells">${fill}</td>`;
      }
         
 

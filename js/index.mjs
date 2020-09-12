@@ -75,14 +75,9 @@ domElements.modalAddEvent.addEventListener("click", (e) => {
 
     const inputs = domElements.modalForm.elements;
 
-    for(let i =0; i < events.length; i++)
-            inputs[i].value = "";
-
     const length = domElements.modalForm.length;
 
     let event = {};
-
-    
 
     for(let i =0; i < length - 1; i++)
         event[`${inputs[i].id}`] = `${inputs[i].value}`;
@@ -107,8 +102,10 @@ domElements.modalAddEvent.addEventListener("click", (e) => {
 
     renderEvents(domElements.dateTitleBtm.textContent)
     
-    
-    
+
+    const modal = $('#exampleModalCenter');
+
+    modal.modal('hide');
 
 
 })
