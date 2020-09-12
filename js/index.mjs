@@ -12,6 +12,7 @@ monthAndYear:
 */
 
 
+
 document.addEventListener("DOMContentLoaded", ()=> {
 
     const monthAndYear = getCurrentMonthAndYear();
@@ -35,13 +36,8 @@ domElements.prevArrow.addEventListener("click", ()=> {
 
     displayMonthTitleAtTop(monthAndYear)
 
-
     renderCalendar(monthAndYear)
-  
-   // domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
-
 });
-
 
 domElements.nextArrow.addEventListener("click", () => {
 
@@ -51,9 +47,21 @@ domElements.nextArrow.addEventListener("click", () => {
 
     renderCalendar(monthAndYear)
 
-   // domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
-
 });
+
+
+domElements.table.addEventListener("click", (e)=> {
+
+    const selectedDate = e.target.textContent;
+    const fullDate = `${selectedDate} ${domElements.monthTitle.textContent}`
+
+    displayDateAtBottom(fullDate)
+
+    renderEvents(fullDate)
+
+})
+
+
 
 
 domElements.addEventBtn.addEventListener("click", () =>{
@@ -120,16 +128,6 @@ domElements.modalAddEvent.addEventListener("click", (e) => {
 
 })
 
-
-domElements.table.addEventListener("click", (e)=> {
-
-      const selectedDate = e.target.textContent;
-
-      domElements.dateTitleBtm.textContent = `${selectedDate} ${domElements.monthTitle.textContent}`
-
-      renderEvents(domElements.dateTitleBtm.textContent)
-
-})
 
 
 domElements.eventsTab.addEventListener("click", (e) => {

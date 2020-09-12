@@ -1,4 +1,19 @@
 import domElements from './../domElements.mjs'
+
+const tConvert = (time) => {
+    // Check correct time format and split into components
+    time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+  
+    if (time.length > 1) { // If time format correct
+      time = time.slice (1);  // Remove full string match value
+      time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
+      time[0] = +time[0] % 12 || 12; // Adjust hours
+    }
+    return time.join (''); // return adjusted time or original string
+  }
+
+
+
 export default (date) => {
   
 
@@ -14,7 +29,7 @@ export default (date) => {
         events.forEach(element => {
 
           html += ` <div class="col-12 p-1 pl-4 border d-flex align-items-center">
-          <span class="col-6">${element.title} -- ${element.startTime} - ${element.endTime}</span>
+          <span class="col-6">${element.title} -- ${tConvert(element.startTime)} - ${tConvert(element.endTime)}</span>
           <a class="col-1 btn text-warning">
               <svg width="1.1em" height="1.1em" viewBox="0 0 16 16" class="bi bi-plus-square ${element.id}" id="event-edit" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
