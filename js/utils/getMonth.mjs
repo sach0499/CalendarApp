@@ -115,3 +115,12 @@ export const displayMonthTitleAtTop = (monthAndYear) => {
 
   domElements.monthTitle.textContent = `${monthAndYear[0]} ${monthAndYear[1]}`
 }
+
+
+export const displayDateAtBottom = date => {
+
+  domElements.dateTitleBtm.textContent = date;
+
+  console.log(date)
+
+}

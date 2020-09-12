@@ -1,5 +1,5 @@
 import domElements from './domElements.mjs'
-import { getCurrentMonthAndYear, getPreviousMonth, getNextMonth, calculateOffset, daysInMonth,displayMonthTitleAtTop } from './utils/getMonth.mjs'
+import { getCurrentMonthAndYear, getPreviousMonth, getNextMonth, calculateOffset, daysInMonth,displayMonthTitleAtTop, displayDateAtBottom } from './utils/getMonth.mjs'
 import { renderCalendar} from './utils/renderCalendar.mjs'
 import renderEvents from './utils/renderEvents.mjs';
 
@@ -15,15 +15,16 @@ monthAndYear:
 document.addEventListener("DOMContentLoaded", ()=> {
 
     const monthAndYear = getCurrentMonthAndYear();
-    
+
     displayMonthTitleAtTop(monthAndYear)
 
     renderCalendar(monthAndYear)
 
-  
-    domElements.dateTitleBtm.textContent = `${(new Date).getDate()} ${domElements.monthTitle.textContent}`
+    const todayDate = `${(new Date).getDate()} ${monthAndYear[0]} ${monthAndYear[1]}`
 
-    renderEvents(domElements.dateTitleBtm.textContent);
+    displayDateAtBottom(todayDate);
+
+    renderEvents(todayDate);
 
 
 });
