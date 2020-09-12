@@ -109,3 +109,9 @@ export const daysInMonth = (monthAndYear) => {
     const month = monthAndYear[2] + 1;
     return new Date(year, month, 0).getDate();
 }
+
+
+export const displayMonthTitleAtTop = (monthAndYear) => {
+
+  domElements.monthTitle.textContent = `${monthAndYear[0]} ${monthAndYear[1]}`
+}

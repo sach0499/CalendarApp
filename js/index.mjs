@@ -1,15 +1,22 @@
 import domElements from './domElements.mjs'
-import { getCurrentMonthAndYear, getPreviousMonth, getNextMonth, calculateOffset, daysInMonth} from './utils/getMonth.mjs'
+import { getCurrentMonthAndYear, getPreviousMonth, getNextMonth, calculateOffset, daysInMonth,displayMonthTitleAtTop } from './utils/getMonth.mjs'
 import {renderCalendar} from './utils/renderCalendar.mjs'
 import renderEvents from './utils/renderEvents.mjs';
 
+
+/*
+monthAndYear:
+0 -> monthName:  "January"
+1 -> fullYear:  2020
+2 -> 0-based index of month:  0
+*/
 
 
 document.addEventListener("DOMContentLoaded", ()=> {
 
     const monthAndYear = getCurrentMonthAndYear();
 
-    domElements.monthTitle.textContent = `${monthAndYear[0]} ${monthAndYear[1]}`
+    displayMonthTitleAtTop(monthAndYear)
 
     renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear), monthAndYear)
 
@@ -24,7 +31,8 @@ domElements.prevArrow.addEventListener("click", ()=> {
 
     const monthAndYear = getPreviousMonth();
 
-    domElements.monthTitle.textContent = `${monthAndYear[0]} ${monthAndYear[1]}`
+    displayMonthTitleAtTop(monthAndYear)
+
 
     renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear), monthAndYear)
   
@@ -37,7 +45,8 @@ domElements.nextArrow.addEventListener("click", () => {
 
     const monthAndYear = getNextMonth();
 
-    domElements.monthTitle.textContent = `${monthAndYear[0]} ${monthAndYear[1]}`
+    displayMonthTitleAtTop(monthAndYear)
+
 
     renderCalendar(calculateOffset(monthAndYear), daysInMonth(monthAndYear), monthAndYear)
 
