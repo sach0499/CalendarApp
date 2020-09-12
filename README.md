@@ -10,5 +10,4 @@ A Calendar Application with an Event Manager. [Live demo.](https://mycalendarapp
 ---
 ## Screenshot
 ![Screenshot](/sach0499/CalendarApp/blob/master/images/screenshot.png)
----
 
